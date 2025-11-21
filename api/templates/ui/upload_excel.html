@@ -1,0 +1,27 @@
+<style>
+    button{
+        padding: 7px 25px;
+        border: 1px springgreen solid;
+        border-radius: 3px;
+        cursor: pointer;
+        background-color: #280;
+    }
+</style>
+<h1>
+    Upload Excel File
+</h1>
+<div>
+    <a style="text-decoration: none; color: darkgray ; font-size: 19px" href="{% url 'dashboard' %}">Back</a>
+    {%if message%}
+    <ul>
+        {%for mes in messages%}
+            <li>{{mes}</li>
+        {%endfor%}
+    </ul>
+    {%endif%}
+    <form method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit">Upload</button>
+    </form>
+</div>

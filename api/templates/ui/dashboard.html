@@ -1,0 +1,51 @@
+<style>
+    li {
+        text-decoration: none;
+        list-style-type: none;
+    }
+    .child-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 20px;
+    }
+    .title {
+        margin-left: 4%;
+        font-family: -apple-system, BlinkMacSystemFont, avenir next,
+        avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu,
+        roboto, noto, arial, sans-serif;
+    }
+
+    .element {
+        margin-left: 5%;
+    }
+
+    .text {
+        font-size: 20px;
+        font-family: Arial;
+    }
+    .upload-btn{
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: bold;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+</style>
+
+<div>
+    <div class="child-container">
+        <h2 class="title">Dashboard</h2>
+        <a class="upload-btn" href="{%url 'add_pasient' %}">Check Your Health</a>
+        <a class="upload-btn" href="{% url 'upload_excel' %}">Upload New</a>
+    </div>
+    {%if context is not None%}
+    <ul>
+        {% for i in context %}
+        <li class="element">
+            <p class="text">{{ i }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    {%endif%}
+</div>

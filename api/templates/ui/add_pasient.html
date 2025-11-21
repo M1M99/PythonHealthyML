@@ -1,0 +1,15 @@
+<h1>Add New Pasient</h1>
+
+{% if messages %}
+    <ul>
+    {% for mes in messages %}
+        <li>{{ mes }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
