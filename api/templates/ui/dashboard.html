@@ -31,12 +31,22 @@
         font-weight: bold;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
+
+    .button-child{
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 560;
+    }
 </style>
 
 <div>
     <div class="child-container">
         <h2 class="title">Dashboard</h2>
         <a class="upload-btn" href="{%url 'add_pasient' %}">Check Your Health</a>
+        <a class="button-child" href="{%url 'roc_curve_view' %}">ROC Curve</a>
+        <a class="button-child" href="{%url 'feature_importance' %}">Feature Importance</a>
+        <a class="button-child" href="{%url 'model_comparison_view' %}">Model Comparison View</a>
+        <a class="button-child" href="{%url 'correlation_heatmap_view' %}">Correlation View</a>
         <a class="upload-btn" href="{% url 'upload_excel' %}">Upload New</a>
     </div>
     {%if context is not None%}
